@@ -3,12 +3,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:notification_ui_page/core/constant/app_assets.dart';
 import 'package:notification_ui_page/core/constant/app_dimensions.dart';
 import 'package:notification_ui_page/core/constant/app_colors.dart';
-
-import '../../data/models/notification_model.dart';
+import '../../domain/entities/notification_entities.dart';
 
 class NotificationCard extends StatelessWidget {
-  final NotificationModel notification;
-
+  final NotificationEntities notification;
 
   const NotificationCard({
     super.key,
@@ -17,16 +15,18 @@ class NotificationCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   // final textTheme = Theme.of(context).textTheme;
+    // final textTheme = Theme.of(context).textTheme;
 
     return Container(
-      margin: const EdgeInsets.symmetric(
-        horizontal: AppDimensions.padding / 2,
-        vertical: AppDimensions.padding / 2,
+      margin: const EdgeInsets.symmetric(horizontal: AppDimensions.padding / 2),
+      padding: const EdgeInsets.symmetric(
+        horizontal: AppDimensions.paddingMedium,
+        vertical: AppDimensions.padding,
       ),
-      padding: const EdgeInsets.all(AppDimensions.padding),
       decoration: BoxDecoration(
-        color: notification.isRead ? AppColors.backgroundRead : AppColors.backgroundUnread,
+        color: notification.isRead
+            ? AppColors.backgroundRead
+            : AppColors.backgroundUnread,
         borderRadius: BorderRadius.circular(AppDimensions.borderRadius),
       ),
       child: Column(
@@ -50,7 +50,7 @@ class NotificationCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                         notification.title,
+                      notification.title,
                       style: TextStyle(
                         fontSize: AppDimensions.fontSizeSmall,
                         fontWeight: FontWeight.w500,
@@ -66,7 +66,8 @@ class NotificationCard extends StatelessWidget {
                         height: 1.8,
                       ),
                     ),
-                    if (notification.hasAction && notification.actionText != null) ...[
+                    if (notification.hasAction &&
+                        notification.actionText != null) ...[
                       const SizedBox(height: AppDimensions.spacingLarge),
                       _buildActionButton(),
                     ],
@@ -87,10 +88,6 @@ class NotificationCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.actionBackground,
         borderRadius: BorderRadius.circular(AppDimensions.buttonBorderRadius),
-        border: Border.all(
-          color: AppColors.actionBorder,
-          width: 1,
-        ),
       ),
       child: Material(
         color: Colors.transparent,
@@ -114,11 +111,11 @@ class NotificationCard extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                const SizedBox(width: AppDimensions.spacingSmall),
-                Icon(
-                  Icons.arrow_forward,
-                  size: AppDimensions.iconSizeMedium,
-                  color: AppColors.iconColor,
+                const SizedBox(width: AppDimensions.spacing / 2),
+                SvgPicture.asset(
+                  AppAssets.arrowRight,
+                  width: AppDimensions.iconSizeMedium,
+                  height: AppDimensions.iconSizeMedium,
                 ),
               ],
             ),

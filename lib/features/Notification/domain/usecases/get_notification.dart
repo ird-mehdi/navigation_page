@@ -3,9 +3,10 @@ import '../repositories/notificition_respository.dart';
 
 class GetNotificationUseCase {
   final NotificationRepository repository;
+
   GetNotificationUseCase(this.repository);
 
-  Future<List<NotificationEntities>> call() async {
-    return await repository.getNotifications();
+  Future<List<NotificationEntities>> call() {
+    return repository.getNotifications();
   }
 }

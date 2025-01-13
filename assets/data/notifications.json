@@ -1,0 +1,46 @@
+[
+    {
+        "title": "Daily Ayah",
+        "message": "The review you made for Iman Poricor helped the community and you earned 3 Points.",
+        "timeAgo": "1 mins ago",
+        "icon": "assets/icons/messages.svg",
+        "isRead": false
+    },
+    {
+        "title": "App Notification Title",
+        "message": "The review you made for Iman Poricor helped the community and you earned 3 Points.",
+        "timeAgo": "1 mins ago",
+        "icon": "assets/icons/notification.svg",
+        "isRead": true
+    },
+    {
+        "title": "Sadaqah Jariyah",
+        "message": "The review you made for Iman Poricor helped the community and you earned 3 Points.",
+        "timeAgo": "1 mins ago",
+        "icon": "assets/icons/lovely.svg",
+        "hasAction": true,
+        "actionText": "Support Now",
+        "isRead": false
+    },
+    {
+        "title": "Daily Ayah",
+        "message": "The review you made for Iman Poricor helped the community and you earned 3 Points.",
+        "timeAgo": "1 mins ago",
+        "icon": "assets/icons/messages.svg",
+        "isRead": true
+    },
+    {
+        "title": "App Notification Title",
+        "message": "Only 30 days left until Ramadan. Start preparing your mind and soul.",
+        "timeAgo": "Yesterday",
+        "icon": "assets/icons/notification.svg",
+        "isRead": false
+    },
+    {
+        "title": "Daily Ayah",
+        "message": "Only 30 days left until Ramadan. Start preparing your mind and soul.",
+        "timeAgo": "Yesterday",
+        "icon": "assets/icons/messages.svg",
+        "isRead": false
+    }
+]
